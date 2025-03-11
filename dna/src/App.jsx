@@ -23,9 +23,9 @@ function App() {
      {/* ----------header---------- */}
      <div id = 'header'>
         <div class = "hearderInner">
-          <div className = 'icon'>
+          <div>
             {/* <FontAwesomeIcon/> 이것은 컴포넌트 입니다. size = "nx" 속성으로 n배 키울 수 있고, color = ""로 색상 변경 가능*/}
-            <FontAwesomeIcon icon={faHexagonNodes} size="3x"/>
+            <FontAwesomeIcon icon={faHexagonNodes} className = 'icon'/>
           </div>
           <div className = 'pgName'>
             DNA

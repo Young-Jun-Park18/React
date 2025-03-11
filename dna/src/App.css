@@ -10,24 +10,27 @@ body{
   border-bottom: 2px solid rgba(255, 255, 255, .15);
   /* 마우스를 뗄 때, 0.2s 여유를 두고 부드럽게 전환*/
   transition: background-color 0.2s, color 0.2s ease-in-out;
+  padding: 5px;
 }
 
 .hearderInner{
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .icon{
-  margin-left: 100px;
+  font-size: 2.7vw;
+  margin-left: 5vw;
   color:white;
   transition: background-color 0.2s, color 0.2s ease-in-out;
 }
 
 .pgName{
   padding: 0 10px;
-  margin-right: 500px;
-  font-size: 30px;
+  padding-right: 17vw;
+  margin-right: 20vw;
+  font-size: 1.7vw;
   font-weight: 1000;
 }
 
@@ -36,12 +39,12 @@ body{
 .navBar .navList{
   list-style: none;
   display: flex;
-  padding: 10px 15%;
-  font-size: 1.2rem;
+  padding: 10px 5vw;
+  font-size: 1vw;
 }
 
 .navList .navElement{
-  margin: 0 45px;
+  margin: 0 2vw;
 }
 
 /*  --------header : hover -------- */
