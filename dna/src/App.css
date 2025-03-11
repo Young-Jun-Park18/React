@@ -18,11 +18,19 @@ body{
   align-items: center;
 }
 
-.logo{
-  z-index: 2;
-  padding: 0 100px;
-  padding-right: 600px;
+.icon{
+  margin-left: 100px;
+  color:white;
+  transition: background-color 0.2s, color 0.2s ease-in-out;
 }
+
+.pgName{
+  padding: 0 10px;
+  margin-right: 500px;
+  font-size: 30px;
+  font-weight: 1000;
+}
+
 
 
 .navBar .navList{
@@ -41,6 +49,11 @@ body{
   background-color: white;
   color: #072d60;
   /* 마우스를 올릴 때, 0.35s 여유를 두고 부드럽게 전환*/
+  transition: background-color 0.35s, color 0.35s ease-in-out;
+}
+
+#header:hover .icon{
+  color: #072d60;
   transition: background-color 0.35s, color 0.35s ease-in-out;
 }
 
