@@ -1,8 +1,15 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
 /*  --------header-------- */
 #header{
-  background-color: aquamarine;
   display: flex;
   border-bottom: 2px solid rgba(255, 255, 255, .15);
+  /* 마우스를 뗄 때, 0.2s 여유를 두고 부드럽게 전환*/
+  transition: background-color 0.2s, color 0.2s ease-in-out;
 }
 
 .hearderInner{
@@ -21,9 +28,22 @@
 .navBar .navList{
   list-style: none;
   display: flex;
-  padding: 20px 300px;
+  padding: 10px 15%;
+  font-size: 1.2rem;
 }
 
 .navList .navElement{
   margin: 0 45px;
+}
+
+/*  --------header : hover -------- */
+#header:hover{
+  background-color: white;
+  color: #072d60;
+  /* 마우스를 올릴 때, 0.35s 여유를 두고 부드럽게 전환*/
+  transition: background-color 0.35s, color 0.35s ease-in-out;
+}
+
+.navElement:hover{
+  font-weight: 1000;
 }

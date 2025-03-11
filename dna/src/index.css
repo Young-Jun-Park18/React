@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "GowunDodum-Regular";
+  font-weight: normal;
+  src: url("./fonts/GowunDodum-Regular.ttf") format("truetype");
+}
+
+
+/* 
+   폰트 : 고운돋움
+   사이트 : 눈누
+   제작자 : 류양희
+   출처 url : https://noonnu.cc/font_page/734
+*/
+body {
+  font-family: "GowunDodum-Regular";
+}
