@@ -16,30 +16,7 @@ import { faHexagonNodes } from "@fortawesome/free-solid-svg-icons"; // 사용할
 
 
 
-
-
-
-
-
 function App() {
-
-
-
-// 변수말고 const [ , ] = useState(''); 사용하는 이유 : 변수처럼 사용할 수 있으면서 값이 변경되면 자동으로 html에 렌더링 되기 때문이다.
-const [mouseHover, setHover] = useState(false);
-
-
-//  function setMouseOn(){
-//    setHover(true);
-//  }  이 코드와 같은 기능이다 하지만 react에서는 화살표 함수가 참조를 더욱 더 안정적으로 하기 때문에 화살표 함수를 더 많이 쓴다.
-const setMouseOn = () => {
-  setHover(true);
-}
-const setMouseOff = () => {
-  setHover(false);
-}
-
-
 
   return (
     <>
@@ -51,28 +28,32 @@ const setMouseOff = () => {
             <FontAwesomeIcon icon={faHexagonNodes} className = 'icon'/>
           </div>
           <div className = 'pgName'>
-            DNA
+            <a href = '#' >DNA</a>
           </div>
           <nav className = 'navBar'>
             <ul className = 'navList'>
               {/*자식 요소로 Professor와 Students가 들어가야함*/}
-              {/* onMouseOver = { 함수이름 }은 React 문법으로서, 마우스가 함수 요소 위로 올라가면 이벤트 발생시킴*/}
-              <li className = 'navElement' onMouseOver = { setMouseOn } onMouseOut = { setMouseOff }  >Members</li>
-              <li className = 'navElement'>Research</li>
-              <li className = 'navElement'>Projects</li>
+              
+              <li className = 'navElement'>
+                <a href = "#">Members</a>
+              </li>
+              <li className = 'navElement'>
+                <a href = "#">Research</a>
+              </li>
+              <li className = 'navElement'>
+                <a href = "#">Projects</a>
+              </li>
               {/*자식 요소로 Journal papers와 conference papers와 Patents가 들어가야함*/}
-              <li className = 'navElement' onMouseOver = { setMouseOn } onMouseOut = { setMouseOff }>Publications</li>
+              <li className = 'navElement'>
+                <a href = "#">Publications</a>
+              </li>
               {/*자식 요소로 News와 Photos가 들어가야함*/}
-              <li className = 'navElement' onMouseOver = { setMouseOn } onMouseOut = { setMouseOff }>History</li>
+              <li className = 'navElement'>
+                <a href = "#">History</a>
+              </li>
             </ul>
           </nav>
         </div>
-      </div>
-
-
-      {/* ------header의 자식 요소들------*/}
-      <div id = 'navChild' style = {{ display : mouseHover ? 'block' : 'none'}}>
-        ddddd
       </div>
 
 
