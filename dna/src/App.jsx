@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      {/* ----------header---------- */}
+      {/* ----------------------header---------------------- */}
       <div id = 'header'>
         <div class = "hearderInner">
           <div>
@@ -56,7 +56,10 @@ function App() {
         </div>
       </div>
 
-
+      {/* --------------main background img ----------------*/}
+      <div className="main-bg">
+        <img src= '/mjuChangjo1.webp' alt="창조관 외부" />
+      </div>
       
 
     </>

@@ -9,27 +9,14 @@ a{
   text-decoration: none;
 }
 
-/*  --------header-------- */
+/* ----------------------header---------------------- */
 #header{
   display: flex;
   border-bottom: 2px solid rgba(255, 255, 255, .15);
   /* 마우스를 뗄 때, 0.2s 여유를 두고 부드럽게 전환*/
-  transition: background-color 0.2s, color 0.2s ease-in-out;
+  transition: background-color 0.35s, color 0.35s ease-in-out;
   width: 100%;
   height: 10vh;
-}
-
-#header .pgName a{
-  transition: background-color 0.2s, color 0.2s ease-in-out;
-}
-
-.pgName a {
-  color: white;
-} 
-
-.navList a {
-  height: 100%;
-  color: white;
 }
 
 .hearderInner{
@@ -41,7 +28,17 @@ a{
   font-size: 2.7vw;
   margin-left: 5vw;
   color:white;
-  transition: background-color 0.2s, color 0.2s ease-in-out;
+  transition: background-color 0.35s, color 0.35s ease-in-out;
+}
+
+#header .pgName a{
+  transition: background-color 0.35s, color 0.35s ease-in-out;
+  color: white;
+}
+
+.navList a {
+  height: 100%;
+  color: white;
 }
 
 .pgName{
@@ -59,11 +56,30 @@ a{
   font-size: 1vw;
 }
 
-.navList .navElement{
+.navElement{
   margin: 0 2vw;
   padding: 1vh 0;
+  /* relative는 원래 자기가 있어야할 위치를 기준*/
+  position: relative;
 }
 
+/* -------막대가 퍼지는 효과------- */
+.navElement::after {
+  content: "";
+  /* absolute는 부모 요소를 기준으로 위치 조정 (relative OR absolute OR fixed) */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #072d60;
+  transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+.navElement:hover::after {
+  width: 100%;
+  left: 0;
+}
 
 /*  --------header : hover -------- */
 #header:hover{
@@ -89,4 +105,23 @@ a{
 #header:hover .navElement a:hover{
   color: #072d60;
   font-weight: 1000;
+}
+
+
+
+/* --------------main background img ----------------*/
+.main-bg{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.6;
+  overflow: hidden;
+}
+
+.main-bg img{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
