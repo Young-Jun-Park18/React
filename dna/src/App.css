@@ -109,14 +109,14 @@ a{
 
 
 
-/* --------------main background img ----------------*/
+/* --------------main slide img ----------------*/
 .main-bg{
   position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 0.65;
   overflow: hidden;
 }
 
