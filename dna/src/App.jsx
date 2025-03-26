@@ -4,8 +4,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Font Awesome 컴포넌트 가져오기
-import { faHexagonNodes } from "@fortawesome/free-solid-svg-icons"; // 사용할 아이콘 가져오기
-import Slide from './slide.jsx'; // export한 함수 이름을 slide.js 파일로부터 import 해온다.
+import { faHexagonNodes } from "@fortawesome/free-solid-svg-icons"; // DAN 아이콘 가져오기
+import Slide from './slide.jsx'; // slide 컴포넌트, export한 함수 이름을 slide.js 파일로부터 import 해온다.
 
 {/* 
     아이콘 : Font-awesome 이용
@@ -22,7 +22,6 @@ function App() {
   return (
     <>
       {/* ----------------------header---------------------- */}
-      <div className="slide-wrap">
         <div id = 'header'>
           <div class = "hearderInner">
             <div>
@@ -30,7 +29,7 @@ function App() {
               <FontAwesomeIcon icon={faHexagonNodes} className = 'icon'/>
             </div>
             <div className = 'pgName'>
-              <a href = '#' >DNA</a>
+              <a href = '#' >DAN</a>
             </div>
             <nav className = 'navBar'>
               <ul className = 'navList'>
@@ -54,7 +53,7 @@ function App() {
 
         {/* --------------main slide img ----------------*/}
         <Slide /> {/* 외부 파일은 이렇게 컴포넌트로 관리한다. */}
-      </div>
+      
 
 
       {/* ----------------- main typo -----------------*/}
@@ -65,6 +64,8 @@ function App() {
         </div>
         <h3 className="mju-typo3">Data Analysis and Networking Lab. @ Myongji University</h3>
       </div>
+
+
 
 
       <div>곧 추가할 부분</div>

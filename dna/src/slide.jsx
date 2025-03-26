@@ -1,8 +1,8 @@
 // 이미지가 5초마다 자동으로 슬라이드 되는 캐러셀 파트
-
-
 import { useState, useEffect } from 'react';
 import styles from './slide.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"; 
 
 
 const Slide = () => {
@@ -19,15 +19,12 @@ const Slide = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   // 이미지 슬라이드시 부드러운 효과를 위한 fade(초기상태 true)
   const [fade, setFade] = useState(true);
+  // 캐러셀을 위한 변수
+  const totalSlides = images.length;
 
-  // 1. useEffect( () => {}, [] )는 부수적인 효과를 설정할 때 사용한다.
-  //    {} 안에 실행할 내용을 넣고, [] 안에 언제 실행할지를 넣는다.
-  //    빈 배열을 넣으면 처음 렌더링될 때 한 번만 실행된다.
-  //    clearInterval() 함수로 제동을 걸어줘야 5초마다 무한히 COUNT 되는 누수를 막을 수 있다.
+  // 1. useEffect( () => {}, [] )는 부수적인 효과를 설정할 때 사용한다, {} 안에 실행할 내용을 넣고, [] 안에 언제 실행할지를 넣는다, 빈 배열을 넣으면 처음 렌더링될 때 한 번만 실행된다, clearInterval() 함수로 제동을 걸어줘야 5초마다 무한히 COUNT 되는 누수를 막을 수 있다.
   // 2. setInterval( () => {}, time ) 함수는 일정 시간마다 특정 작업을 반복해주는 함수
-  // 3. prevIndex는 내가 만든 변수일 뿐이고 화살표 함수를 사용.
-  //    currentIndex의 현재 값인 0이 자동으로 prevIndex에 할당되고, 
-  //    (prevIndex + 1) % images.length 이 값을 5초 뒤에반환하라는 함수임
+  // 3. prevIndex는 내가 만든 변수일 뿐이고 화살표 함수를 사용한다, currentIndex의 현재 값인 0이 자동으로 prevIndex에 할당되고, (prevIndex + 1) % images.length 이 값을 5초 뒤에반환하라는 함수임
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
@@ -42,6 +39,17 @@ const Slide = () => {
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
   }, []);
 
+  // carousel 이전 버튼
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  // carousel 다음 버튼
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+
+
   return(
     <>
     {/*여기서 className을 = {styles.mainBg}로 바꿔줘야 모듈 css 파일이 적용됨*/}
@@ -52,6 +60,19 @@ const Slide = () => {
         className = {fade ? styles.fadeIn : styles.fadeOut} 
         />
     </div>
+
+     {/* -----------------------캐러셀 버튼-------------------------- */}
+     <div className={styles.carouselButton}>
+        <a href ='#' className={styles.c}>
+          <FontAwesomeIcon icon={faAngleLeft} className={styles.leftButton} onClick={prevSlide} />
+        </a>
+        <span className={styles.carouselText1}>{String(currentIndex + 1).padStart(2, "0")}</span>
+        <span className={styles.carouselText2}>|</span>
+        <span className={styles.carouselText3}>{String(totalSlides).padStart(2, "0")}</span>
+        <a href ='#' className={styles.c}>
+          <FontAwesomeIcon icon={faAngleRight} className={styles.rightButton} onClick={nextSlide} />
+        </a>
+      </div>
     </>
   );
   

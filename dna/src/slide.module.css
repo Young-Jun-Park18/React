@@ -5,13 +5,14 @@
   따로 slide.modules.css라는 모듈을 만들어서 개별적으로 css 관리를 해준다.
 */
 
+/* --------------background img---------------*/
 .mainBg{
   position: relative;
   top: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  opacity: 0.65;
+  opacity: 0.5;
   overflow: hidden;
 }
 
@@ -29,4 +30,25 @@
 
 .fadeOut{
   opacity: 0;
+}
+
+/* --------------carousel button---------------*/
+.carouselButton{
+  display: flex;
+  position: absolute;
+  top : 29rem;
+  left : 15vw;
+  font-size: 1.3em;
+}
+
+.carouselText1, .carouselText2, .carouselText3{
+  margin: 0 1vw;
+}
+
+.leftButton, .rightButton{
+  margin-top: 0.5vh;
+}
+
+.c{
+  color: white;
 }

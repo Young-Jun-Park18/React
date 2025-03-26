@@ -112,10 +112,6 @@ a{
 
 
 /* --------------main slide img의 css는 모듈화 되었음 ----------------*/
-.slide-wrap{
-  position: relative;
-  height: 100vh;
-}
 
 /* ---------------------------main-typo -----------------------------*/
 .main-typo-wrap{
@@ -156,7 +152,7 @@ a{
 .mju-typo3{
   margin-top: 5%;
   font-weight: 100;
-  animation: slideText 1.5s ease-in-out;
+  animation: slideText 1s ease-in-out;
 }
 
 @keyframes slideText{
