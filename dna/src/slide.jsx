@@ -12,11 +12,13 @@ const Slide = () => {
     '/sample3.png',
     '/sample2.png',
     '/sample4.png',
-    'sample5.png'
+    '/sample5.png'
   ];
 
-  // 현재 보여줄 사진의 index를 state로 만들기(초기상태 0) 
+  // 현재 보여줄 사진의 index를 state로 만들기 위한 currentIndex(초기상태 0) 
   const [currentIndex, setCurrentIndex] = useState(0);
+  // 이미지 슬라이드시 부드러운 효과를 위한 fade(초기상태 true)
+  const [fade, setFade] = useState(true);
 
   // 1. useEffect( () => {}, [] )는 부수적인 효과를 설정할 때 사용한다.
   //    {} 안에 실행할 내용을 넣고, [] 안에 언제 실행할지를 넣는다.
@@ -28,7 +30,13 @@ const Slide = () => {
   //    (prevIndex + 1) % images.length 이 값을 5초 뒤에반환하라는 함수임
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setFade(false);
+
+      setTimeout( () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setFade(true);
+      }, 500);
+
     }, 5000); 
 
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
@@ -37,7 +45,11 @@ const Slide = () => {
   return(
     // 여기서 className을 = {styles.mainBg}로 바꿔줘야 모듈 css 파일이 적용됨
     <div className={styles.mainBg}>
-      <img src={images[currentIndex]} alt="슬라이드 이미지" />
+      <img 
+        src={images[currentIndex]}
+        alt="슬라이드 이미지" 
+        className = {fade ? styles.fadeIn : styles.fadeOut} 
+        />
     </div>
   );
 

@@ -1,8 +1,8 @@
 /* 
   "slide.js 파일의 CSS 모듈, 형식은 "이름.module.css"로 해야 css 모듈인 것이다. "
 
-  app.css에서는 slide.js에 따로 분리한 컴포넌트에 style이 적용될 수 없기 때문에
-  따로 slide.css라는 폴더를 만들어서 개별적으로 css 관리를 해준다.
+  app.css에서는 slide.jsx에 따로 분리한 컴포넌트에 style이 적용될 수 없기 때문에
+  따로 slide.modules.css라는 모듈을 만들어서 개별적으로 css 관리를 해준다.
 */
 
 .mainBg{
@@ -19,4 +19,14 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  position: absolute;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeIn{
+  opacity: 1;
+}
+
+.fadeOut{
+  opacity: 0;
 }
