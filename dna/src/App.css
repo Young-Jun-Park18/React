@@ -3,6 +3,7 @@ body{
   padding: 0;
   background-color: black;
   color: white;
+  overflow-x: hidden;
 }
 
 a{
@@ -12,6 +13,7 @@ a{
 /* ----------------------header---------------------- */
 #header{
   display: flex;
+  position: absolute;
   border-bottom: 2px solid rgba(255, 255, 255, .15);
   /* 마우스를 뗄 때, 0.2s 여유를 두고 부드럽게 전환*/
   transition: background-color 0.35s, color 0.35s ease-in-out;
@@ -109,4 +111,61 @@ a{
 
 
 
-/* --------------main slide img ----------------*/
+/* --------------main slide img의 css는 모듈화 되었음 ----------------*/
+.slide-wrap{
+  position: relative;
+  height: 100vh;
+}
+
+/* ---------------------------main-typo -----------------------------*/
+.main-typo-wrap{
+  position: absolute;
+  top : 25vh;
+  left : 15vw;
+}
+
+.main-typo{
+  position: relative;
+  animation: slideText 1s ease;
+}
+
+.main-typo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20%;
+  width: 35%;
+  height: 4px;
+  background-color: white;
+}
+
+.mju-typo1{
+  margin: 0;
+  padding: 0;
+  font-size : 2em;
+  font-weight: 100;
+}
+
+.mju-typo2{
+  margin: 0;
+  padding: 0;
+  font-size : 4em;
+  font-weight: 900;
+}
+
+.mju-typo3{
+  margin-top: 5%;
+  font-weight: 100;
+  animation: slideText 1.5s ease-in-out;
+}
+
+@keyframes slideText{
+  from {
+    opacity: 0;
+    transform: translateX(-8%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

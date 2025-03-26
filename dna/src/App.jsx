@@ -22,44 +22,53 @@ function App() {
   return (
     <>
       {/* ----------------------header---------------------- */}
-      <div id = 'header'>
-        <div class = "hearderInner">
-          <div>
-            {/* <FontAwesomeIcon/> 이것은 컴포넌트 입니다. size = "nx" 속성으로 n배 키울 수 있고, color = ""로 색상 변경 가능*/}
-            <FontAwesomeIcon icon={faHexagonNodes} className = 'icon'/>
+      <div className="slide-wrap">
+        <div id = 'header'>
+          <div class = "hearderInner">
+            <div>
+              {/* <FontAwesomeIcon/> 이것은 컴포넌트 입니다. size = "nx" 속성으로 n배 키울 수 있고, color = ""로 색상 변경 가능*/}
+              <FontAwesomeIcon icon={faHexagonNodes} className = 'icon'/>
+            </div>
+            <div className = 'pgName'>
+              <a href = '#' >DNA</a>
+            </div>
+            <nav className = 'navBar'>
+              <ul className = 'navList'>
+                {/*자식 요소로 Professor와 Students가 들어가야함*/}
+                <li className = 'navElement'>
+                  <a href = "#">Members</a></li>
+                <li className = 'navElement'>
+                  <a href = "#">Research</a></li>
+                <li className = 'navElement'>
+                  <a href = "#">Projects</a></li>
+                {/*자식 요소로 Journal papers와 conference papers와 Patents가 들어가야함*/}
+                <li className = 'navElement'>
+                  <a href = "#">Publications</a></li>
+                {/*자식 요소로 News와 Photos가 들어가야함*/}
+                <li className = 'navElement'>
+                  <a href = "#">History</a></li>
+              </ul>
+            </nav>
           </div>
-          <div className = 'pgName'>
-            <a href = '#' >DNA</a>
-          </div>
-          <nav className = 'navBar'>
-            <ul className = 'navList'>
-              {/*자식 요소로 Professor와 Students가 들어가야함*/}
-              
-              <li className = 'navElement'>
-                <a href = "#">Members</a>
-              </li>
-              <li className = 'navElement'>
-                <a href = "#">Research</a>
-              </li>
-              <li className = 'navElement'>
-                <a href = "#">Projects</a>
-              </li>
-              {/*자식 요소로 Journal papers와 conference papers와 Patents가 들어가야함*/}
-              <li className = 'navElement'>
-                <a href = "#">Publications</a>
-              </li>
-              {/*자식 요소로 News와 Photos가 들어가야함*/}
-              <li className = 'navElement'>
-                <a href = "#">History</a>
-              </li>
-            </ul>
-          </nav>
         </div>
+
+        {/* --------------main slide img ----------------*/}
+        <Slide /> {/* 외부 파일은 이렇게 컴포넌트로 관리한다. */}
       </div>
 
-      {/* --------------main slide img ----------------*/}
-      <Slide /> {/* 외부 파일은 이렇게 컴포넌트로 관리한다. */}
-      
+
+      {/* ----------------- main typo -----------------*/}
+      <div className="main-typo-wrap">
+        <div className = "main-typo">
+          <h2 className = "mju-typo1">명지대학교</h2>
+          <h1 className = "mju-typo2">데이터분석 및 네트워킹 연구실</h1>
+        </div>
+        <h3 className="mju-typo3">Data Analysis and Networking Lab. @ Myongji University</h3>
+      </div>
+
+
+      <div>곧 추가할 부분</div>
+
 
     </>
   )

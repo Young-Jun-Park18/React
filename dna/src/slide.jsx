@@ -43,7 +43,8 @@ const Slide = () => {
   }, []);
 
   return(
-    // 여기서 className을 = {styles.mainBg}로 바꿔줘야 모듈 css 파일이 적용됨
+    <>
+    {/*여기서 className을 = {styles.mainBg}로 바꿔줘야 모듈 css 파일이 적용됨*/}
     <div className={styles.mainBg}>
       <img 
         src={images[currentIndex]}
@@ -51,7 +52,9 @@ const Slide = () => {
         className = {fade ? styles.fadeIn : styles.fadeOut} 
         />
     </div>
+    </>
   );
+  
 
 };
 
