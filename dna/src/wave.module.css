@@ -1,0 +1,106 @@
+.introducetext2 {
+  height: 50%;
+  font-weight: lighter;
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+.introducetext2 span {
+  font-weight: 900;
+  display: inline-block; /* 애니메이션 시작 전 숨기기 */
+}
+
+/* 애니메이션 시작 시 opacity를 변경 */
+.introducetext2.animate span {
+  animation: textWave 1s ease-in-out forwards; /* forwards로 애니메이션 끝 상태 유지 */
+}
+
+@keyframes textWave {
+  0%, 40%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-8px); }
+  60% { transform: translateY(-2px); }
+}
+
+.introducetext2 span {
+  animation-delay: 0s; /* 기본적으로 딜레이는 없지만, useEffect에서 각 span에 적용됨 */
+  display: inline-block;
+  font-weight: 900;
+}
+
+/* 각 span 요소마다 5초 대기시간을 둔 지연 적용 */
+.introducetext2 span:nth-child(1) { animation-delay: 0s; }
+.introducetext2 span:nth-child(2) { animation-delay: 0.054s; }
+.introducetext2 span:nth-child(3) { animation-delay: 0.108s; }
+.introducetext2 span:nth-child(4) { animation-delay: 0.162s; }
+.introducetext2 span:nth-child(5) { animation-delay: 0.216s; }
+.introducetext2 span:nth-child(6) { animation-delay: 0.270s; }
+.introducetext2 span:nth-child(7) { animation-delay: 0.324s; }
+.introducetext2 span:nth-child(8) { animation-delay: 0.378s; }
+.introducetext2 span:nth-child(9) { animation-delay: 0.432s; }
+.introducetext2 span:nth-child(10) { animation-delay: 0.486s; }
+.introducetext2 span:nth-child(11) { animation-delay: 0.540s; }
+.introducetext2 span:nth-child(12) { animation-delay: 0.594s; }
+.introducetext2 span:nth-child(13) { animation-delay: 0.648s; }
+.introducetext2 span:nth-child(14) { animation-delay: 0.702s; }
+.introducetext2 span:nth-child(15) { animation-delay: 0.756s; }
+.introducetext2 span:nth-child(16) { animation-delay: 0.810s; }
+.introducetext2 span:nth-child(17) { animation-delay: 0.864s; }
+.introducetext2 span:nth-child(18) { animation-delay: 0.918s; }
+.introducetext2 span:nth-child(19) { animation-delay: 0.972s; }
+.introducetext2 span:nth-child(20) { animation-delay: 1.026s; }
+.introducetext2 span:nth-child(21) { animation-delay: 1.080s; }
+.introducetext2 span:nth-child(22) { animation-delay: 1.134s; }
+.introducetext2 span:nth-child(23) { animation-delay: 1.188s; }
+.introducetext2 span:nth-child(24) { animation-delay: 1.242s; }
+.introducetext2 span:nth-child(25) { animation-delay: 1.296s; }
+.introducetext2 span:nth-child(26) { animation-delay: 1.350s; }
+.introducetext2 span:nth-child(27) { animation-delay: 1.404s; }
+.introducetext2 span:nth-child(28) { animation-delay: 1.458s; }
+.introducetext2 span:nth-child(29) { animation-delay: 1.512s; }
+.introducetext2 span:nth-child(30) { animation-delay: 1.566s; }
+.introducetext2 span:nth-child(31) { animation-delay: 1.620s; }
+.introducetext2 span:nth-child(32) { animation-delay: 1.674s; }
+.introducetext2 span:nth-child(33) { animation-delay: 1.728s; }
+.introducetext2 span:nth-child(34) { animation-delay: 1.782s; }
+.introducetext2 span:nth-child(35) { animation-delay: 1.836s; }
+.introducetext2 span:nth-child(36) { animation-delay: 1.890s; }
+.introducetext2 span:nth-child(37) { animation-delay: 1.944s; }
+.introducetext2 span:nth-child(38) { animation-delay: 1.998s; }
+.introducetext2 span:nth-child(39) { animation-delay: 2.052s; }
+.introducetext2 span:nth-child(40) { animation-delay: 2.106s; }
+.introducetext2 span:nth-child(41) { animation-delay: 2.160s; }
+.introducetext2 span:nth-child(42) { animation-delay: 2.214s; }
+.introducetext2 span:nth-child(43) { animation-delay: 2.268s; }
+.introducetext2 span:nth-child(44) { animation-delay: 2.322s; }
+.introducetext2 span:nth-child(45) { animation-delay: 2.376s; }
+.introducetext2 span:nth-child(46) { animation-delay: 2.430s; }
+.introducetext2 span:nth-child(47) { animation-delay: 2.484s; }
+.introducetext2 span:nth-child(48) { animation-delay: 2.538s; }
+.introducetext2 span:nth-child(49) { animation-delay: 2.592s; }
+.introducetext2 span:nth-child(50) { animation-delay: 2.646s; }
+.introducetext2 span:nth-child(51) { animation-delay: 2.700s; }
+.introducetext2 span:nth-child(52) { animation-delay: 2.754s; }
+.introducetext2 span:nth-child(53) { animation-delay: 2.808s; }
+.introducetext2 span:nth-child(54) { animation-delay: 2.862s; }
+.introducetext2 span:nth-child(55) { animation-delay: 2.916s; }
+.introducetext2 span:nth-child(56) { animation-delay: 2.970s; }
+.introducetext2 span:nth-child(57) { animation-delay: 3.024s; }
+.introducetext2 span:nth-child(58) { animation-delay: 3.078s; }
+.introducetext2 span:nth-child(59) { animation-delay: 3.132s; }
+.introducetext2 span:nth-child(60) { animation-delay: 3.186s; }
+.introducetext2 span:nth-child(61) { animation-delay: 3.240s; }
+.introducetext2 span:nth-child(62) { animation-delay: 3.294s; }
+.introducetext2 span:nth-child(63) { animation-delay: 3.348s; }
+.introducetext2 span:nth-child(64) { animation-delay: 3.402s; }
+.introducetext2 span:nth-child(65) { animation-delay: 3.456s; }
+.introducetext2 span:nth-child(66) { animation-delay: 3.510s; }
+.introducetext2 span:nth-child(67) { animation-delay: 3.564s; }
+.introducetext2 span:nth-child(68) { animation-delay: 3.618s; }
+.introducetext2 span:nth-child(69) { animation-delay: 3.672s; }
+.introducetext2 span:nth-child(70) { animation-delay: 3.726s; }
+.introducetext2 span:nth-child(71) { animation-delay: 3.780s; }
+.introducetext2 span:nth-child(72) { animation-delay: 3.834s; }
+.introducetext2 span:nth-child(73) { animation-delay: 3.888s; }
+.introducetext2 span:nth-child(74) { animation-delay: 3.942s; }
+.introducetext2 span:nth-child(75) { animation-delay: 3.996s; }
+.introducetext2 span:nth-child(76) { animation-delay: 4.056s; }

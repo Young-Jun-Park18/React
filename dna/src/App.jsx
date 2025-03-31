@@ -6,6 +6,7 @@ import './App.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Font Awesome 컴포넌트 가져오기
 import { faHexagonNodes } from "@fortawesome/free-solid-svg-icons"; // DAN 아이콘 가져오기
 import Slide from './slide.jsx'; // slide 컴포넌트, export한 함수 이름을 slide.js 파일로부터 import 해온다.
+import Wave from './wave.jsx';
 
 {/* 
     아이콘 : Font-awesome 이용
@@ -23,7 +24,7 @@ function App() {
     <>
       {/* ----------------------header---------------------- */}
         <div id = 'header'>
-          <div class = "hearderInner">
+          <div className = "hearderInner">
             <div>
               {/* <FontAwesomeIcon/> 이것은 컴포넌트 입니다. size = "nx" 속성으로 n배 키울 수 있고, color = ""로 색상 변경 가능*/}
               <FontAwesomeIcon icon={faHexagonNodes} className = 'icon'/>
@@ -67,9 +68,24 @@ function App() {
 
 
 
+      {/* ----------------- introduce -----------------*/}  
+      <div className ='introduce-wrap'> 
+        <div className="introduce-box">
+          <div className="introduce">
+            <img src="./mjuLogo.svg" alt="명지대 로고" className='mjuLogo'/>
+          </div>
+          <div className="introduce-text">
+            <p className="introduce-text1">
+              Welcome to DAN Lab.
+            </p>
+            {/* 물결 텍스트 컴포넌트 .wave.jsx*/}
+            <Wave />
 
-      <div>곧 추가할 부분</div>
+          </div>
+        </div>
+      </div>
 
+  
 
     </>
   )
