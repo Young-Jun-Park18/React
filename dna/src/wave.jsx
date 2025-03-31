@@ -78,7 +78,7 @@ const Wave = () => {
       <span>p</span><span>t</span><span>s</span>{" "}
       to{" "}
       <span>h</span><span>h</span><span>p</span><span>a</span>
-      <span>r</span><span>k</span><span>@</span><br></br><span>m</span>
+      <span>r</span><span>k</span><span>@</span><span>m</span>
       <span>j</span><span>u</span><span>.</span><span>a</span>
       <span>c</span><span>.</span><span>k</span><span>r</span>
     </p>

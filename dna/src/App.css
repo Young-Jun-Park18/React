@@ -48,6 +48,7 @@ a{
   padding-right: 17vw;
   margin-right: 20vw;
   font-size: 1.7vw;
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
   font-weight: 1000;
 }
 
@@ -56,6 +57,7 @@ a{
   display: flex;
   padding: 1vh 5vw;
   font-size: 1vw;
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
 }
 
 .navElement{
@@ -122,7 +124,7 @@ a{
 
 .main-typo{
   position: relative;
-  animation: slideText 1.5s ease;
+  animation: slideText 1.5s ease-out;
 }
 
 .main-typo::after {
@@ -130,29 +132,33 @@ a{
   position: absolute;
   left: 0;
   bottom: -20%;
-  width: 35%;
-  height: 4px;
+  width: 24vw;
+  height: 0.3vh;
   background-color: white;
 }
 
 .mju-typo1{
   margin: 0;
   padding: 0;
-  font-size : 2em;
+  font-size : 2vw;
   font-weight: 100;
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
 }
 
 .mju-typo2{
   margin: 0;
   padding: 0;
-  font-size : 4em;
+  font-size : 3.3vw;
   font-weight: 900;
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
 }
 
 .mju-typo3{
   margin-top: 5%;
   font-weight: 100;
-  animation: slideText 1.3s ease-in-out;
+  animation: slideText 1.7s ease-in-out;
+  font-size: clamp(11px, 1vw, 24px);
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
 }
 
 @keyframes slideText{
@@ -169,7 +175,7 @@ a{
 
 /* --------------------------- introduce -----------------------------*/
 .introduce-wrap{
-  height: 50vh;
+  height: 90vh;
   width: 100vw;
   position: relative;
   display: flex;
@@ -179,14 +185,17 @@ a{
   /* subBg.jpg 출처 (freepik -> https://kr.freepik.com/free-vector/realistic-white-golden-geometric-background_18262593.htm#fromView=search&page=1&position=15&uuid=ab18cdc1-6997-4c92-bf5b-0f57ec1059ae&query=%ED%9D%B0%EC%83%89+%EB%B0%B0%EA%B2%BD)*/
   background-image: url('./subBg.jpg');
   background-size: cover;
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+
 }
 
 .introduce-box{
-  height: 43vh;
+  height: 40vh;
   width: 100vw;
   position: relative;
   display: flex;
   margin-top: 7vh;
+  transform: translateY(35%);
 }
 
 /* 좌측 */
@@ -212,10 +221,109 @@ a{
 .introduce-text1{
   font-weight: 600;
   height: 20%;
-  font-size: 2.5em;
+  font-size: clamp(23px, 2.1vw, 50px);
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
   margin-bottom: 0;
   margin-top: 2%;
 }
 
+/* --------------------------- contact -----------------------------*/
+.contact-wrap{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color:rgba(128, 128, 128, 0.8); 
+}
 
 
+.contact-box{
+  position: relative;
+  height: 80%;
+  width: 80%;
+  margin: 0 10%;
+  box-shadow: 
+  -10px 0 20px rgba(0, 0, 0, 0.2),  /* 왼쪽 그림자 */
+  10px 0 20px rgba(0, 0, 0, 0.2),   /* 오른쪽 그림자 */
+  0 -10px 20px rgba(0, 0, 0, 0.2),  /* 위쪽 그림자 */
+  0 10px 20px rgba(0, 0, 0, 0.2);   /* 아래쪽 그림자 */
+  background-color: rgba(54, 53, 54, 1); 
+  transform: translateY(-20%);
+}
+
+.contact-title{
+  display: flex;
+  position: relative;
+  height: 10%;
+  justify-content: center; /* flex box에서만 정렬 사용 가능*/
+  color: white;
+  font-size: clamp(10px, 1vw, 24px);
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
+}
+
+.contact-locate, .contact-email, .contact-call {
+  display: flex;
+  align-items: center;
+}
+
+.contact-locate-icon, .contact-email-icon, .contact-call-icon{
+  margin: 0 2vw;
+  width: 1%;
+  color: white;
+}
+
+.contact-locate-text h2, .contact-email-text h2, .contact-call-text h2{
+  margin-bottom: 0;
+  color: white;
+  font-size: clamp(10px, 2vw, 24px);
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
+}
+
+.contact-locate-text p, .contact-email-text p, .contact-call-text p{
+  margin-top: 0;
+  color: white;
+  font-size: clamp(10px, 1vw, 24px);
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
+}
+
+.contact-locate-text, .contact-email-text, .contact-call-text{
+  justify-content: left;
+  align-items: center;
+}
+
+
+.contact-locate{
+  height: 13%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+} 
+
+.contact-email{
+  height: 13%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.contact-call{
+  height: 13%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.ct-icon{
+  display: flex;
+  font-size: 2vw; /* 뷰포트 너비 기준으로 크기 조절 */
+  max-width: 50px; /* 너무 커지지 않도록 제한 */
+  min-width: 20px; /* 너무 작아지지 않도록 제한 */
+  transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
+}
+
+.contact-email-icon{
+  font-size: clamp(14px, 2vw, 24px);
+}
+
+.contact-map{
+  width: 100%;
+  height: 51%;
+}
