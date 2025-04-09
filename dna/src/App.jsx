@@ -121,6 +121,7 @@ function App() {
 
           <div className ='introduce-wrap'> {/* introduce */}  
             <div className="introduce-box">
+              
               <div className="introduce">
                 <img src="./mjuLogo.svg" alt="명지대 로고" className='mjuLogo'/>
               </div>
