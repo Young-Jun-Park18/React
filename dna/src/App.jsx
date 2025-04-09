@@ -24,7 +24,7 @@ import {Routes, Route, Link} from 'react-router-dom';
     return (
       <div style={{ width: '100%', height: '100%' }}>
         <iframe
-          src="https://map.naver.com/v5/entry/place/19283275?c=14141503.7854272,4511767.4172622,15,0,0,0,dh&"
+          src="https://naver.me/F74UPBVn"
           width="100%"
           height="100%"
           frameBorder="0"
