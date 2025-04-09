@@ -21,7 +21,7 @@ a{
   height: 10vh;
 }
 
-.hearderInner{
+.headerInner{
   display: flex;
   align-items: center;
 }
@@ -232,7 +232,7 @@ a{
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color:rgba(128, 128, 128, 0.8); 
+  background-color:rgba(140, 140, 140, 0.8); 
 }
 
 
@@ -260,9 +260,28 @@ a{
   transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
 }
 
+.contact-title::before{
+  position: absolute;
+  content: "";
+  width: 12.5vw;
+  height: 3px;
+  background-color: white;
+  top: 20%;
+}
+
+.contact-title::after{
+  position: absolute;
+  bottom: 20%;
+  content: "";
+  width: 12.5vw;
+  height: 3px;
+  background-color: white;
+}
+
 .contact-locate, .contact-email, .contact-call {
   display: flex;
   align-items: center;
+  opacity: 0;
 }
 
 .contact-locate-icon, .contact-email-icon, .contact-call-icon{
@@ -304,11 +323,33 @@ a{
   padding: 0;
   display: flex;
 }
+
 .contact-call{
   height: 13%;
   margin: 0;
   padding: 0;
   display: flex;
+}
+
+.fade-in { /* rollUp 애니메이션 */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-locate.fade-in {
+  transition-delay: 0s;
+}
+.contact-email.fade-in {
+  transition-delay: 0.2s;
+}
+.contact-call.fade-in {
+  transition-delay: 0.4s;
 }
 
 .ct-icon{
@@ -327,3 +368,4 @@ a{
   width: 100%;
   height: 51%;
 }
+

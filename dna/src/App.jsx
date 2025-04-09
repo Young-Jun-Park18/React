@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react' // state 문법 사용하기 위해 useState import 하기
+import { useState, useEffect, useRef } from 'react' // state 문법 사용하기 위해 useState import 하기
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -36,12 +36,41 @@ import {Routes, Route, Link} from 'react-router-dom';
   };
 
 
-function App() {
-  return (
+function App() { 
+
+  const locateRef = useRef(null);
+  const emailRef = useRef(null);
+  const callRef = useRef(null);
+
+  const [locateVisible, setLocateVisible] = useState(false);
+  const [emailVisible, setEmailVisible] = useState(false);
+  const [callVisible, setCallVisible] = useState(false);
+
+  useEffect(() => {
+    const createObserver = (ref, setVisible) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.7 }
+      );
+      if (ref.current) observer.observe(ref.current);
+    };
+  
+    createObserver(locateRef, setLocateVisible);
+    createObserver(emailRef, setEmailVisible);
+    createObserver(callRef, setCallVisible);
+  }, []);
+
+
+  return ( //app() 함수 return 시작
     <>
       {/* ----------------------header---------------------- */}
       <div id = 'header'>
-        <div className = "hearderInner">
+        <div className = "headerInner">
           <div>
             {/* <FontAwesomeIcon/> 이것은 컴포넌트 입니다. size = "nx" 속성으로 n배 키울 수 있고, color = ""로 색상 변경 가능*/}
             <FontAwesomeIcon icon={faHexagonNodes} className = 'icon'/>
@@ -105,43 +134,45 @@ function App() {
             </div>
           </div>
 
-          <div className="contact-wrap">{/* contact us */}
+          <div className="contact-wrap">
             <div className="contact-box">
 
-              <div className="contact-title">
-                <h1>CONTACT US</h1>
-              </div>
+              <div className='contact-bg'>
+                <div className="contact-title">
+                  <h1>CONTACT US</h1>
+                </div>
 
-              <div className="contact-locate">
-                <div className="contact-locate-icon">
-                  <FontAwesomeIcon icon={faLocationDot} className = 'ct-icon'/>
+                <div className={`contact-locate fade-in ${locateVisible ? 'visible' : ''}`} ref={locateRef}>
+                  <div className="contact-locate-icon">
+                    <FontAwesomeIcon icon={faLocationDot} className = 'ct-icon'/>
+                  </div>
+                  <div className="contact-locate-text">
+                    <h2>Location:</h2>
+                    <p>Natural Science Campus: 116 Myongji-ro, Cheoin-gu, Yongin-si, Gyeonggi-do, 17058, South Korea <br></br>Room 5543, Engineering Building 5 </p>
+                  </div>
                 </div>
-                <div className="contact-locate-text">
-                  <h2>Location:</h2>
-                  <p>Natural Science Campus: 116 Myongji-ro, Cheoin-gu, Yongin-si, Gyeonggi-do, 17058, South Korea</p>
-                </div>
-              </div>
 
-              <div className="contact-email">
-                <div className="contact-email-icon">
-                  <FontAwesomeIcon icon={faEnvelopeOpenText} className = 'ct-icon'/>
+                <div className={`contact-email fade-in ${emailVisible ? 'visible' : ''}`} ref={emailRef}>
+                  <div className="contact-email-icon">
+                    <FontAwesomeIcon icon={faEnvelopeOpenText} className = 'ct-icon'/>
+                  </div>
+                  <div className="contact-email-text">
+                    <h2>Email:</h2>
+                    <p>danlab5502@gmail.com</p>
+                  </div>
                 </div>
-                <div className="contact-email-text">
-                  <h2>Email:</h2>
-                  <p>danlab5502@gmail.com</p>
-                </div>
-              </div>
 
-              <div className="contact-call">
-                <div className="contact-call-icon">
-                 <FontAwesomeIcon icon={faMobileScreenButton} className = 'ct-icon'/>
+                <div className={`contact-call fade-in ${callVisible ? 'visible' : ''}`} ref={callRef}>
+                  <div className="contact-call-icon">
+                  <FontAwesomeIcon icon={faMobileScreenButton} className = 'ct-icon'/>
+                  </div>
+                  <div className="contact-call-text">
+                    <h2>Call:</h2>
+                    <p>031-330-6766</p>
+                  </div>
                 </div>
-                <div className="contact-call-text">
-                  <h2>Call:</h2>
-                  <p>031-330-6766</p>
-                </div>
-              </div>
-                
+              </div>  
+              
               <div className="contact-map">
                 <NaverMapIframe/> {/* 명지대 5공학관 지도 컴포넌트 */}
               </div>
