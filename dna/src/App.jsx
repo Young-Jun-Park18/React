@@ -126,7 +126,7 @@ function App() {
               </div>
               <div className="introduce-text">
                 <p className="introduce-text1">
-                  Welcome to DAN Lab.
+                  Welcome to <span>DAN</span> Lab.
                 </p>
                 <Wave />{/* text wave effect */}
 
@@ -135,11 +135,12 @@ function App() {
           </div>
 
           <div className="contact-wrap">
+            <img src="./contactBg5.png" alt="contactUs 배경이미지"/>
             <div className="contact-box">
 
               <div className='contact-bg'>
                 <div className="contact-title">
-                  <h1>CONTACT US</h1>
+                  <h1>CONTACT <span>US</span></h1>
                 </div>
 
                 <div className={`contact-locate fade-in ${locateVisible ? 'visible' : ''}`} ref={locateRef}>

@@ -227,12 +227,19 @@ a{
   margin-top: 2%;
 }
 
+
 /* --------------------------- contact -----------------------------*/
 .contact-wrap{
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color:rgba(140, 140, 140, 0.8); 
+}
+
+.contact-wrap img{
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
 }
 
 
@@ -246,8 +253,8 @@ a{
   10px 0 20px rgba(0, 0, 0, 0.2),   /* 오른쪽 그림자 */
   0 -10px 20px rgba(0, 0, 0, 0.2),  /* 위쪽 그림자 */
   0 10px 20px rgba(0, 0, 0, 0.2);   /* 아래쪽 그림자 */
-  background-color: rgba(54, 53, 54, 1); 
-  transform: translateY(-20%);
+  background-color: #1e1e1e;
+  transform: translateY(-122vh);
 }
 
 .contact-title{
@@ -287,12 +294,12 @@ a{
 .contact-locate-icon, .contact-email-icon, .contact-call-icon{
   margin: 0 2vw;
   width: 1%;
-  color: white;
+  color:  rgb(30, 144, 230);
 }
 
 .contact-locate-text h2, .contact-email-text h2, .contact-call-text h2{
   margin-bottom: 0;
-  color: white;
+  color:   rgb(30, 144, 230);
   font-size: clamp(10px, 2vw, 24px);
   transition: font-size 0.3s ease-in-out; /* 부드러운 크기 변화 */
 }
@@ -334,7 +341,7 @@ a{
 .fade-in { /* rollUp 애니메이션 */
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 1s ease-in-out, transform 1s ease-out;
 }
 
 .fade-in.visible {
@@ -346,10 +353,10 @@ a{
   transition-delay: 0s;
 }
 .contact-email.fade-in {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 .contact-call.fade-in {
-  transition-delay: 0.4s;
+  transition-delay: 0.2s;
 }
 
 .ct-icon{
@@ -369,3 +376,7 @@ a{
   height: 51%;
 }
 
+.contact-title span{
+  color:  rgb(30, 144, 230);
+
+}
