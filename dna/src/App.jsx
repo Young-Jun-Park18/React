@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Font Awesom
 import { faHexagonNodes, faLocationDot, faEnvelopeOpenText, faMobileScreenButton} from "@fortawesome/free-solid-svg-icons"; // DAN, 위치, 이메일, 전화 아이콘
 import Slide from './slide.jsx'; // slide 컴포넌트, export한 함수 이름을 slide.js 파일로부터 import 해온다.
 import Wave from './wave.jsx'; // textWave 컴포넌트 import
-import {Routes, Route, Link, Navigate, Outlet} from 'react-router-dom';
+import {Routes, Route, Link, Navigate, Outlet, useLocation} from 'react-router-dom';
 import Members from './pages/members/Members.jsx'; // Members 페이지 컴포넌트 사용을 위한 import
 import Professor from './pages/members/Professor/Professor.jsx';
 import PhD from './pages/members/PhD/PhD.jsx';
@@ -42,7 +42,7 @@ import Alumni from './pages/members/Alumni/Alumni.jsx';
 
 
 function App() { 
-
+  
   const locateRef = useRef(null);
   const emailRef = useRef(null);
   const callRef = useRef(null);
@@ -51,27 +51,31 @@ function App() {
   const [emailVisible, setEmailVisible] = useState(false);
   const [callVisible, setCallVisible] = useState(false);
 
+  const location = useLocation(); // ✅ 변경점 1: useLocation() 사용
+
   useEffect(() => {
     const createObserver = (ref, setVisible) => {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
             setVisible(true);
-            observer.unobserve(entry.target);
           }
         },
-        { threshold: 0.8
-
-         }
+        { threshold: 0.8 }
       );
       if (ref.current) observer.observe(ref.current);
     };
-  
+
+    // ✅ 변경점 2: 상태 초기화 (다시 애니메이션 걸기 위해)
+    setLocateVisible(false);
+    setEmailVisible(false);
+    setCallVisible(false);
+
+    // ✅ 변경점 3: 옵저버 등록
     createObserver(locateRef, setLocateVisible);
     createObserver(emailRef, setEmailVisible);
     createObserver(callRef, setCallVisible);
-  }, []);
-
+  }, [location.pathname]); // ✅ 변경점 4: location 기반으로 useEffect 재실행
 
   return ( //app() 함수 return 시작
     <>
