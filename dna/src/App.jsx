@@ -4,11 +4,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Font Awesome 컴포넌트 가져오기
-import { faHexagonNodes } from "@fortawesome/free-solid-svg-icons"; // DAN 아이콘 가져오기
-import { faLocationDot, faEnvelopeOpenText, faMobileScreenButton} from "@fortawesome/free-solid-svg-icons"; // 위치, 이메일, 전화 아이콘
+import { faHexagonNodes, faLocationDot, faEnvelopeOpenText, faMobileScreenButton} from "@fortawesome/free-solid-svg-icons"; // DAN, 위치, 이메일, 전화 아이콘
 import Slide from './slide.jsx'; // slide 컴포넌트, export한 함수 이름을 slide.js 파일로부터 import 해온다.
 import Wave from './wave.jsx'; // textWave 컴포넌트 import
-import {Routes, Route, Link} from 'react-router-dom';
+import {Routes, Route, Link, Navigate, Outlet} from 'react-router-dom';
+import Members from './pages/members/Members.jsx'; // Members 페이지 컴포넌트 사용을 위한 import
+import Professor from './pages/members/Professor/Professor.jsx';
+import PhD from './pages/members/PhD/PhD.jsx';
+import MS from'./pages/members/MS/MS.jsx';
+import Interns from './pages/members/Interns/Interns.jsx';
+import Alumni from './pages/members/Alumni/Alumni.jsx';
 
 {/* 
     아이콘 : Font-awesome 이용
@@ -55,7 +60,9 @@ function App() {
             observer.unobserve(entry.target);
           }
         },
-        { threshold: 0.7 }
+        { threshold: 0.8
+
+         }
       );
       if (ref.current) observer.observe(ref.current);
     };
@@ -187,11 +194,63 @@ function App() {
         {/*----------------------- Main Page Route End ---------------------- */}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {/*--------------------- Members Page Route Start ------------------- */}
-        <Route path = "/Members" element = { <div> Mebers 아직 구현 안 했음 </div>}>
-        
+        <Route path = "/Members" element = { <Members/> }>
+          {/* index element = Navigate to = "" 를 이용해서 기본경로를 설정가능 */}
+          {/*이중 route에서는 경로 슬래쉬가 빠짐*/}
+          <Route index element={<Navigate to="Professor" replace />} /> 
+          <Route path = "Professor" element = {<Professor/>}></Route>
+          <Route path = "PhD" element = {<PhD/>}></Route>
+          <Route path = "MS" element = {<MS/>}></Route>
+          <Route path = "Interns" element = {<Interns/>}></Route>
+          <Route path = "Alumni" element = {<Alumni/>}></Route>
         </Route>
          {/*--------------------- Members Page Route End -------------------- */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         {/*--------------------- Research Page Route Start ------------------ */}
