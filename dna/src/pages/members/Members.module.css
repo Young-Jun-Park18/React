@@ -4,26 +4,39 @@
 
 .membersBg{
   position: relative;
-  opacity: 0.6;
+  opacity: 0.4;
   height: 45vh;
   width: 100vw;
   background-color: white;
   z-index: -1;
+  background-image: url('/membersBg.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+
 }
 
 .membersBarWrap{
   position: relative;
   color: white;
-  background-color: aqua;
   width: 100vw;
   height: 10vh;
-  margin-top: -10vh;
+  margin-top: -12vh;
+}
+
+.membersBarWrap::before{
+  content: "";
+  border-top: 2px solid rgba(255, 255, 255, .15);
+  width: 100vw;
+  /* 
+    막대기 넣고 싶을 때 color가 아니라 background color를 지정해줘야 보임
+    position도 정해줘야 보임
+  */
+  position: absolute;
 }
 
 .membersBar{
   width: 80vw;
   height: 10vh;
-  background-color: white;
   margin: 0 10vw;
 }
 
@@ -33,15 +46,68 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.2vw;
+  transition: font-size 0.3s ease-in-out; /* vw로 설정한 텍스트가 부드럽게 커지고 작아지는 효과 */
 }
 
 .membersSelect li{
+  height: 100%;
   width: 20%;
   display: flex;
   justify-content: center;  
   align-items: center;    
+  transition: background-color 0.1s ease-in-out; /* 부드러운 강조 */
+  cursor: pointer; /* 커서 모양을 손가락 모양으로 바꿈 */
+}
+
+.membersSelect li:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* 강조 배경 (투명 흰색) */
+}
+
+.membersLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%; 
+  height: 100%;  
+  color: white;
+  text-decoration: none;
+}
+
+@keyframes showText {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.membersTitleText{
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  font-size: 4vw;
+  transition: font-size 0.3s ease-in-out;
+  animation: showText 1s ease-out;
 }
 
 
+.membersSelect li.active {
+  position: relative;
+}
+
+.membersSelect li.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* 바의 높이 */
+  background-color: white; /* 하얀색 바 */
+  transition: width 0.3s ease;
+}
 

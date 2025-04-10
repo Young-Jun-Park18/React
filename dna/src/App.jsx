@@ -51,7 +51,7 @@ function App() {
   const [emailVisible, setEmailVisible] = useState(false);
   const [callVisible, setCallVisible] = useState(false);
 
-  const location = useLocation(); // ✅ 변경점 1: useLocation() 사용
+  const location = useLocation(); 
 
   useEffect(() => {
     const createObserver = (ref, setVisible) => {
@@ -66,16 +66,14 @@ function App() {
       if (ref.current) observer.observe(ref.current);
     };
 
-    // ✅ 변경점 2: 상태 초기화 (다시 애니메이션 걸기 위해)
     setLocateVisible(false);
     setEmailVisible(false);
     setCallVisible(false);
 
-    // ✅ 변경점 3: 옵저버 등록
     createObserver(locateRef, setLocateVisible);
     createObserver(emailRef, setEmailVisible);
     createObserver(callRef, setCallVisible);
-  }, [location.pathname]); // ✅ 변경점 4: location 기반으로 useEffect 재실행
+  }, [location.pathname]); 
 
   return ( //app() 함수 return 시작
     <>

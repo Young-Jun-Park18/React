@@ -182,7 +182,8 @@ a{
   background-color:#f5f6fa;
   color: black;
   opacity: 0.9;
-  /* subBg.jpg 출처 (freepik -> https://kr.freepik.com/free-vector/realistic-white-golden-geometric-background_18262593.htm#fromView=search&page=1&position=15&uuid=ab18cdc1-6997-4c92-bf5b-0f57ec1059ae&query=%ED%9D%B0%EC%83%89+%EB%B0%B0%EA%B2%BD)
+  /* 
+    subBg.jpg 출처 (freepik -> https://kr.freepik.com/free-vector/realistic-white-golden-geometric-background_18262593.htm#fromView=search&page=1&position=15&uuid=ab18cdc1-6997-4c92-bf5b-0f57ec1059ae&query=%ED%9D%B0%EC%83%89+%EB%B0%B0%EA%B2%BD)
      주의!!!! : 경로를   ./subBg.jpg 로 설정하면 vite가 참조하지 못함 
   */
   background-image: url('/subBg.jpg');
