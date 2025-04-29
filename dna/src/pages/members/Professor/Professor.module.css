@@ -1,4 +1,3 @@
-
 .professorWrap *{
   margin: 0;
   padding: 0;
@@ -117,6 +116,8 @@
   color: #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  overscroll-behavior: contain; /* 중요: 내부 스크롤이 끝나도 바깥으로 전파되지 않게 함 */
+  touch-action: auto;
 }
 
 /* Hover 효과 */
@@ -247,11 +248,11 @@ ul {
   color: #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  scroll-behavior: smooth; /* 스크롤 부드럽게 */
-
   /* Firefox 스크롤바 */
   scrollbar-width: thin;
   scrollbar-color: #ccc #1e1e1e;
+  overflow-y: auto;
+  overscroll-behavior: contain; /* 중요: 내부 스크롤이 끝나도 바깥으로 전파되지 않게 함 */
 }
 
 /* Webkit 스크롤바 (Chrome, Safari, Edge) */

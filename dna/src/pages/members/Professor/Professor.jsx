@@ -35,7 +35,7 @@ function Professor(){
                 <div className={styles.name2}>
                   <br></br>
                   <h1><span>Professional</span> Experience</h1><br></br>
-                  <div className={styles.scrollBox2}>
+                  <div className={styles.scrollBox2} data-lenis-prevent>
                     <ul>
                       <li>TTA ICT International Standardization Expert (2023 - Current)</li>
                       <li>Executive Director, Korean Institute of Communications and Information Sciences[KICS] (2023 - Current)</li>
@@ -61,7 +61,7 @@ function Professor(){
                 <div className={styles.name2}>
                   <br></br>
                   <h1><span>IEEE</span> 802.11 표준화 기고</h1><br></br>
-                  <div className={styles.scrollBox2}>
+                  <div className={styles.scrollBox2} data-lenis-prevent>
                     <ul>
                       <li>Overall MAC Procedure for WUR, doc.: IEEE 802.11-16/1445r1, 08 Nov 2016.</li>
                       <li>SR Backoff Procedure, doc.: IEEE 802.11-16/1403r1, 07 Nov 2016.</li>
@@ -98,7 +98,7 @@ function Professor(){
                 <div className={styles.name2}>
                   <br></br>
                   <h1><span>International</span> Patent Application</h1><br></br>
-                  <div className={styles.scrollBox2}>
+                  <div className={styles.scrollBox2} data-lenis-prevent>
                     <ul>
                       <li>박현희 외, 무선 통신 시스템에서 디스커버리 윈도우 어웨이크 주기를 설정하는 방법 및 장치, PCT/KR2015/008520, 2015.08.14.</li>
                       <li>박현희 외, 파워 세이브 모드로 동작하는 nan 장치 간의 데이터 통신 방법 및 데이터 통신을 수행하는 파워 세이브 모드로 운용되는 nan 장치, PCT/KR2015/013469, 2015.12.09.</li>
@@ -176,7 +176,7 @@ function Professor(){
                 <div className={styles.name2}>
                   <br></br>
                   <h1><span>International</span> Patent Registration</h1><br></br>
-                  <div className={styles.scrollBox2}>
+                  <div className={styles.scrollBox2} data-lenis-prevent>
                     <ul>
                     <li>박현희 외, Method and apparatus for outputting supplementary content from WFD, US10034047 (2015.12.09)</li>
                       <li>박현희 외, Association method for data transmission in wireless communication system and device using same, US10045196 (2016.02.23)</li>
@@ -193,7 +193,7 @@ function Professor(){
                 <div className={styles.name2}>
                   <br></br>
                   <h1><span>Domestic</span> Patent Registration</h1><br></br>
-                  <div className={styles.scrollBox2}>
+                  <div className={styles.scrollBox2} data-lenis-prevent>
                     <ul>
                       <li>박현희, 김의직, VANET 환경에서의 라우팅 경로 설정 방법 및 장치(METHOD AND APPARTUS FOR SETTING UP ROUTING PATH IN VANET ENVIRONMENT), 출원번호: 1020150099726, 출원일자: 2015.07.14, 등록번호: 1016792750000, 등록일자: 2016.11.18.</li>
                       <li>박현희, 김의직, 빔포밍을 사용한 위치 기반 멀티플렉싱 전송 방법 및 장치(The method and apparatus for location-oriented multiplexing transmission using beamforming), 출원번호: 1020150111845, 출원일자: 2015.08.07, 등록번호: 1016792760000, 등록일자: 2016.11.18.</li>
