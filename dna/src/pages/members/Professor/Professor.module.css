@@ -230,6 +230,10 @@ ul {
   color: black;
 }
 
+.name2 span{
+  color: #4A90E2;
+}
+
 .scrollBox2 {
   max-height: 40vh;
   overflow-y: auto;
