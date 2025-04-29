@@ -384,7 +384,7 @@ a{
 }
 
 .contact-title span{
-  color:  rgb(30, 144, 230);
+  color: rgb(30, 144, 230);
 }
 
 /* 아래에서 위로 올라오는 애니메이션 */
@@ -405,4 +405,8 @@ a{
 .name2.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.introduce-text1 span{
+  color : #4A90E2;
 }

@@ -104,3 +104,8 @@
 .introducetext2 span:nth-child(74) { animation-delay: 3.942s; }
 .introducetext2 span:nth-child(75) { animation-delay: 3.996s; }
 .introducetext2 span:nth-child(76) { animation-delay: 4.056s; }
+
+
+.introducetext2 span{
+  color: #4A90E2;
+}
