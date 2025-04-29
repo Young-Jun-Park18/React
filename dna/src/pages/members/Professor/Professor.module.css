@@ -1,8 +1,10 @@
 
+
 .professorWrap *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  margin-top: -4px;
 }
 
 .professorWrap{
@@ -10,9 +12,9 @@
   padding: 0;
   position: relative;
   width: 100vw;
-  /* min-height: 100vh;을 사용해야 콘텐츠가 늘어도 알아서 길어짐*/
-  min-height: 150vh;
-  background-color:	#F8F8F8;
+  min-height: 380vh;
+  height: auto;
+  background-color:	#FEFEFE;
 
 }
 
@@ -22,7 +24,6 @@
   min-height: 100vh;
   margin: 0 15vw;
   /*background-color: blue;*/
-
 }
 
 .professorTitle{
@@ -37,8 +38,9 @@
   width: 100%;
   height: 100%;
   align-items: center;
-  font-size: 3rem;
+  font-size: 3vw;
   color: black;
+  transition: font-size 0.3s ease-in-out;
 }
 
 .professorTitle h2::before{
@@ -62,7 +64,7 @@
   position: absolute;
   bottom: 0;
   content: "";
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* 색상 진하게 변경 */
   height: 2px;
   width: 100%;
 }
@@ -81,15 +83,195 @@
 .professorPhoto{
   width: 20vw;
   min-height: 80vh;
-  background-color: #F5F5F5;
 }
 
 .professorPhoto img{
   width: 15vw;
+  transition: width 0.3s ease-in-out; /* 추가: 사진 크기 부드럽게 */
 }
 
+/* ---------------------- 1번 박스 ------------------------- */
+span{
+  color:  #4A90E2;
+  display: inline-block; /* 인라인 블록 요소로 변경 */
+  line-height: 1.8; /* line-height를 통해 세로 정렬 조정 */
+}
 .professorIntro{
   width: 60vw;
   min-height: 120vh;
-  background-color: blueviolet;
+}
+
+.professorIntro h1{
+  margin-left: -1.6rem;
+}
+
+.scrollBox {
+  max-height: 40vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-left: -20px;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover 효과 */
+.scrollBox:hover {
+  background-color: #2a2a2a; /* 살짝 밝은 배경 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  margin-left: 1rem; /* 점이 제대로 보이도록 살짝 여백 */
+}
+
+.name li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  list-style-type: disc;
+  color: #cccccc; /* 추가: 글자 + 점 색 모두 회색 */
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.name h1::before {
+  content: "•"; /* 점 */
+  color: #4A90E2; /* 파란색 점 */
+  font-size: 2rem; /* 점 크기 */
+  margin-right: 10px; /* 점과 텍스트 사이 여백 */
+  vertical-align: middle; /* 수직 정렬 */
+}
+
+.name{
+  position: relative;
+  height: auto;
+  color: black;
+  font-size: 1vw;
+  transition: font-size 0.3s ease-in-out;
+  padding-bottom: 60px; /* 여백 추가 */
+}
+
+.name li:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.name::after{
+  position: absolute;
+  bottom: 0;
+  content: "";
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* 색상 진하게 변경 */
+  height: 2px;
+  width: 100%;
+}
+
+.name li a {
+  color: #cccccc; /* li 요소의 텍스트 색상과 동일 */
+  text-decoration: none; /* 링크의 밑줄 제거 */
+}
+
+.name li a:hover {
+  color: #4A90E2; /* 링크에 마우스를 올리면 색상 변경 */
+  text-decoration: underline; /* 링크에 마우스를 올리면 밑줄 추가 */
+}
+
+/* ---------------------- 2 ~ 6번 박스 ------------------------- */
+.name2 {
+  position: relative;
+  padding-bottom: 60px; /* 여유 공간 추가 */
+  font-size: 1vw; 
+}
+
+.name2 h1::before {
+  content: "•"; /* 점 */
+  color: #4A90E2; /* 파란색 점 */
+  font-size: 2rem; /* 점 크기 */
+  margin-right: 10px; /* 점과 텍스트 사이 여백 */
+  vertical-align: middle; /* 수직 정렬 */
+}
+
+/* 마지막 요소에는 적용 x */
+.name2:not(:last-of-type)::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  height: 2px;
+  width: 100%;
+}
+
+
+.name2 li {
+  list-style-type: disc;
+  color: #cccccc;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.name2 li{
+  margin-bottom: 24px;
+}
+
+.name2 p{
+  color: #808080;
+  font-size: smaller;
+}
+
+.name2 h1{
+  color: black;
+}
+
+.scrollBox2 {
+  max-height: 40vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-left: -20px;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  scroll-behavior: smooth; /* 스크롤 부드럽게 */
+
+  /* Firefox 스크롤바 */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #1e1e1e;
+}
+
+/* Webkit 스크롤바 (Chrome, Safari, Edge) */
+.scrollBox2::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollBox2::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.scrollBox2::-webkit-scrollbar-thumb {
+  color: #ddd;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.scrollBox2::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Hover 효과 */
+.scrollBox2:hover {
+  background-color: #2a2a2a; /* 살짝 밝은 배경 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }

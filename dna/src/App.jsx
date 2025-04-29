@@ -14,6 +14,8 @@ import PhD from './pages/members/PhD/PhD.jsx';
 import MS from'./pages/members/MS/MS.jsx';
 import Interns from './pages/members/Interns/Interns.jsx';
 import Alumni from './pages/members/Alumni/Alumni.jsx';
+import Lenis from '@studio-freight/lenis' // 홈페이지 스크롤 부드럽게 해주는 라이브러리
+
 
 {/* 
     아이콘 : Font-awesome 이용
@@ -42,6 +44,8 @@ import Alumni from './pages/members/Alumni/Alumni.jsx';
 
 
 function App() { 
+
+  
   
   const locateRef = useRef(null);
   const emailRef = useRef(null);
@@ -52,6 +56,28 @@ function App() {
   const [callVisible, setCallVisible] = useState(false);
 
   const location = useLocation(); 
+
+  // 부드럽게 스크롤 기능
+  useEffect(() => {
+    const lenis = new Lenis({
+      // duration이 클수록 부드럽고 느리게 전환됨 
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
 
   useEffect(() => {
     const createObserver = (ref, setVisible) => {
