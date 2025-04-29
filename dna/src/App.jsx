@@ -44,9 +44,6 @@ import Lenis from '@studio-freight/lenis' // 홈페이지 스크롤 부드럽게
 
 
 function App() { 
-
-  
-  
   const locateRef = useRef(null);
   const emailRef = useRef(null);
   const callRef = useRef(null);
@@ -57,28 +54,7 @@ function App() {
 
   const location = useLocation(); 
 
-  // 부드럽게 스크롤 기능
-  useEffect(() => {
-    const lenis = new Lenis({
-      // duration이 클수록 부드럽고 느리게 전환됨 
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-    })
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
-
-
+  // 롫업 애니메이션
   useEffect(() => {
     const createObserver = (ref, setVisible) => {
       const observer = new IntersectionObserver(
@@ -100,6 +76,28 @@ function App() {
     createObserver(emailRef, setEmailVisible);
     createObserver(callRef, setCallVisible);
   }, [location.pathname]); 
+
+
+  // 부드럽게 스크롤 기능
+  useEffect(() => {
+    const lenis = new Lenis({
+      // duration이 클수록 부드럽고 느리게 전환됨 
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
 
   return ( //app() 함수 return 시작
     <>

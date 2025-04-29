@@ -1,5 +1,4 @@
 
-
 .professorWrap *{
   margin: 0;
   padding: 0;
@@ -91,7 +90,7 @@
 }
 
 /* ---------------------- 1번 박스 ------------------------- */
-span{
+.name span{
   color:  #4A90E2;
   display: inline-block; /* 인라인 블록 요소로 변경 */
   line-height: 1.8; /* line-height를 통해 세로 정렬 조정 */
@@ -183,11 +182,12 @@ ul {
   text-decoration: underline; /* 링크에 마우스를 올리면 밑줄 추가 */
 }
 
-/* ---------------------- 2 ~ 6번 박스 ------------------------- */
+/* ---------------------- 2~6번 박스 ------------------------- */
 .name2 {
   position: relative;
   padding-bottom: 60px; /* 여유 공간 추가 */
   font-size: 1vw; 
+  transition: font-size 0.3s ease-in-out;
 }
 
 .name2 h1::before {

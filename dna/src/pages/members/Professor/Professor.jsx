@@ -1,4 +1,5 @@
 import styles from "./Professor.module.css";
+import { useState, useEffect, useRef } from 'react';
 
 function Professor(){
   return(
