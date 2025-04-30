@@ -200,7 +200,7 @@ ul {
 }
 
 /* 마지막 요소에는 적용 x */
-.name2:not(:last-of-type)::after {
+.name2::after {
   position: absolute;
   bottom: 0;
   left: 0;
