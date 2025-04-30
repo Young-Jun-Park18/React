@@ -7,7 +7,7 @@
 
 .phWrap{
   position: relative;
-  min-height: 280vh;
+  min-height: 250vh;
   height: auto;
   width: 100vw;
   background-color: white;
@@ -70,7 +70,7 @@
   height: 5vh;
 }
 
-/*---------------------------------jiha kim--------------------------------------*/
+/*---------------------------------공통 부분 제외 학생 파트 --------------------------------------*/
 
 .phIntroWrap{
   position: relative;
