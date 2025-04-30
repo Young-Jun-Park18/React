@@ -255,26 +255,6 @@ ul {
   overscroll-behavior: contain; /* 중요: 내부 스크롤이 끝나도 바깥으로 전파되지 않게 함 */
 }
 
-/* Webkit 스크롤바 (Chrome, Safari, Edge) */
-.scrollBox2::-webkit-scrollbar {
-  width: 8px;
-}
-
-.scrollBox2::-webkit-scrollbar-track {
-  background: #1e1e1e;
-  border-radius: 10px;
-}
-
-.scrollBox2::-webkit-scrollbar-thumb {
-  color: #ddd;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.scrollBox2::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-
 /* Hover 효과 */
 .scrollBox2:hover {
   background-color: #2a2a2a; /* 살짝 밝은 배경 */

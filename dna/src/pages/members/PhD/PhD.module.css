@@ -12,7 +12,7 @@
   width: 100vw;
   background-color: white;
   margin-top: -4px; /*모든 페이지에 공통 적용할 것*/
-  background-color:	#FEFEFE;
+  background-color:	#FEFEFE;  
 }
 
 .phBox{
@@ -70,78 +70,128 @@
   height: 5vh;
 }
 
-/*---------------------------------공통 적용 해제 부분--------------------------------------*/
+/*---------------------------------jiha kim--------------------------------------*/
 
-/* 전체 박스 */
-.stWrap1 {
+.phIntroWrap{
   position: relative;
   display: flex;
-  width: 70vw;
-  align-items: stretch;
-  margin-bottom: 5%;
+  margin-bottom: 9rem;
 }
 
-/* 왼쪽: 사진 + 이름 */
-.leftBox1 {
-  display: flex;
-  flex-direction: column;
-  width: 15vw;
-  border: 1px solid rgba(0, 0, 0, 0.2); /* 연한 검정 테두리 */
-}
-
-/* 사진 */
-.stPhoto1 {
-  width: 15vw;
+.phPhoto{
+  width: 20vw;
   height: 35vh;
-  transition: width 0.3s ease-in-out;
 }
 
-.stPhoto1 img {
+.phPhoto img{
   width: 15vw;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: width 0.3s ease-in-out;
+  height : 35vh;
+  transition: width 0.3s ease-in-out; /* 추가: 사진 크기 부드럽게 */
+  opacity: 0.75;
+  transform: scale(1);
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* 이름 */
-.stName1 {
-  width: 15vw;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.3); /* 연한 검정 테두리 */
-  background-color: #1e1e1e;
-  transition: width 0.3s ease-in-out;
+.phIntroWrap:hover .phPhoto img {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
-.stName1 h3 {
-  font-size: 2vw;
-  margin: 0;
+.phIntro{
+  width: 60vw;
+  height: 25vh;
+}
+
+.phIntro h1{
+  margin-left: -1.6rem;
+}
+
+.name{
+  position: relative;
+  height: auto;
+  color: black;
+  font-size: 1vw;
+  transition: font-size 0.3s ease-in-out;
+  padding-bottom: 60px; /* 여백 추가 */
+}
+
+.name span{
+  color:  #4A90E2;
+  display: inline-block; /* 인라인 블록 요소로 변경 */
+  line-height: 1.8; /* line-height를 통해 세로 정렬 조정 */
+}
+
+.name h1::before {
+  content: "•"; /* 점 */
+  color: #4A90E2; /* 파란색 점 */
+  font-size: 2rem; /* 점 크기 */
+  margin-right: 10px; /* 점과 텍스트 사이 여백 */
+  vertical-align: middle; /* 수직 정렬 */
+}
+
+.name li {
   color: #cccccc;
-  transition: width 0.3s ease-in-out;
+  font-weight: 700;
+  margin-bottom: 1rem;   /* 아래 여백만 주기 */
+  word-break: break-word; /* 긴 텍스트 줄바꿈 */
+  list-style-type: disc;
 }
 
-/* 설명 칸 */
-.introWrap1 {
-  flex: 1;
-  background-color: blue;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding-left: 1vw;
+.name li:not(:last-child) {
+  margin-bottom: 24px;
 }
 
-/* 초기에는 투명 + 왼쪽 이동 */
-.introText1 {
+.name::after{
+  position: absolute;
+  bottom: 0;
+  content: "";
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* 색상 진하게 변경 */
+  height: 2px;
+  width: 100%;
+}
+
+.name li a {
+  color: #cccccc; /* li 요소의 텍스트 색상과 동일 */
+  text-decoration: none; /* 링크의 밑줄 제거 */
+}
+
+.name li a:hover {
+  color: #4A90E2; /* 링크에 마우스를 올리면 색상 변경 */
+  text-decoration: underline; /* 링크에 마우스를 올리면 밑줄 추가 */
+}
+
+.scrollBox {
+  max-height: 25vh;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* 스크롤 필요 시 보이게 */
+  scrollbar-color: #ccc #1e1e1e;
+}
+
+.scrollBox ul {
+  padding-left: 1.5rem;
+}
+
+/* Hover 효과 */
+.scrollBox:hover {
+  background-color: #2a2a2a; /* 살짝 밝은 배경 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 리스트 기본 상태 */
+.scrollBox li {
   opacity: 0;
   transform: translateX(-20px);
   transition: all 0.5s ease;
 }
 
-/* .stWrap1:hover로 감싸면, 사진이든 이름이든 hover해도 작동함 */
-.stWrap1:hover .introText1 {
+/* hoverTriggered 클래스가 있을 때 활성화 */
+.hoverTriggered .scrollBox li {
   opacity: 1;
   transform: translateX(0);
 }
+
