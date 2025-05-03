@@ -24,7 +24,7 @@ import Lenis from '@studio-freight/lenis' // 홈페이지 스크롤 부드럽게
     이용 방법2 : 컴포넌트 import -> import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
     이용 방법3 : 내가 쓸 아이콘 import -> import { faHexagonNodes } from "@fortawesome/free-solid-svg-icons";
     이용 방법4 : return() 함수 안에서 컴포넌트 추가 -> <FontAwesomeIcon icon={faHexagonNodes} size="2x" color="blue" />
-  */}
+*/}
 
   
   const NaverMapIframe = () => { // 명지대학교 용인캠퍼스 5공학관 위치 지도 
