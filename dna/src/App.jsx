@@ -14,8 +14,8 @@ import PhD from './pages/members/PhD/PhD.jsx';
 import MS from'./pages/members/MS/MS.jsx';
 import Interns from './pages/members/Interns/Interns.jsx';
 import Alumni from './pages/members/Alumni/Alumni.jsx';
-import Lenis from '@studio-freight/lenis' // 홈페이지 스크롤 부드럽게 해주는 라이브러리
-
+import Lenis from '@studio-freight/lenis'; // 홈페이지 스크롤 부드럽게 해주는 라이브러리
+import Research from './pages/research/research.jsx';
 
 {/* 
     아이콘 : Font-awesome 이용
@@ -26,7 +26,6 @@ import Lenis from '@studio-freight/lenis' // 홈페이지 스크롤 부드럽게
     이용 방법4 : return() 함수 안에서 컴포넌트 추가 -> <FontAwesomeIcon icon={faHexagonNodes} size="2x" color="blue" />
 */}
 
-  
   const NaverMapIframe = () => { // 명지대학교 용인캠퍼스 5공학관 위치 지도 
     return (
       <div style={{ width: '100%', height: '100%' }}>
@@ -219,23 +218,6 @@ function App() {
         </Route>
         {/*----------------------- Main Page Route End ---------------------- */}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {/*--------------------- Members Page Route Start ------------------- */}
         <Route path = "/Members" element = { <Members/> }>
           {/* index element = Navigate to = "" 를 이용해서 기본경로를 설정가능 */}
@@ -249,41 +231,25 @@ function App() {
         </Route>
          {/*--------------------- Members Page Route End -------------------- */}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {/*--------------------- Research Page Route Start ------------------ */}
-        <Route path = "/Research" element = { <div> Research 아직 구현 안 했음 </div>}>
+        <Route path = "/Research" element = { <Research/>}>
         
         </Route>
          {/*--------------------- Research Page Route End ------------------- */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         {/*--------------------- Projects Page Route Start ------------------ */}
